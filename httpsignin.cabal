@@ -2,13 +2,13 @@
 --
 -- see: https://github.com/sol/hpack
 --
--- hash: 9cc91d898cd90c92b9d812145cacc494909e1f36fb1490e11556ad4af3d202c6
+-- hash: ce263bdf26f9c67817aba55ac01bc43a34118500279eac92f86b91e338609d89
 
-name:           httptest
+name:           httpsignin
 version:        0.1.0.0
-description:    Please see the README on GitHub at <https://github.com/githubuser/httptest#readme>
-homepage:       https://github.com/githubuser/httptest#readme
-bug-reports:    https://github.com/githubuser/httptest/issues
+description:    Please see the README on GitHub at <https://github.com/githubuser/httpsignin#readme>
+homepage:       https://github.com/githubuser/httpsignin#readme
+bug-reports:    https://github.com/githubuser/httpsignin/issues
 author:         Author name here
 maintainer:     example@example.com
 copyright:      2018 Author name here
@@ -23,47 +23,61 @@ extra-source-files:
 
 source-repository head
   type: git
-  location: https://github.com/githubuser/httptest
+  location: https://github.com/githubuser/httpsignin
 
 library
   hs-source-dirs:
       src
   build-depends:
-      base >=4.7 && <5
+      aeson
+    , base >=4.7 && <5
+    , bytestring
+    , http-client
+    , http-conduit
+    , text
+    , unordered-containers
+    , yaml
   exposed-modules:
       Lib
   other-modules:
-      Paths_httptest
+      Paths_httpsignin
   default-language: Haskell2010
 
-executable httptest-exe
+executable httpsignin-exe
   main-is: Main.hs
   hs-source-dirs:
       app
   ghc-options: -threaded -rtsopts -with-rtsopts=-N
   build-depends:
-      base >=4.7 && <5
-    , httptest
+      aeson
+    , base >=4.7 && <5
+    , bytestring
     , http-client
     , http-conduit
-    , bytestring
-    , yaml
-    , aeson
-    , unordered-containers
+    , httpsignin
     , text
+    , unordered-containers
+    , yaml
   other-modules:
-      Paths_httptest
+      Paths_httpsignin
   default-language: Haskell2010
 
-test-suite httptest-test
+test-suite httpsignin-test
   type: exitcode-stdio-1.0
   main-is: Spec.hs
   hs-source-dirs:
       test
   ghc-options: -threaded -rtsopts -with-rtsopts=-N
   build-depends:
-      base >=4.7 && <5
-    , httptest
+      aeson
+    , base >=4.7 && <5
+    , bytestring
+    , http-client
+    , http-conduit
+    , httpsignin
+    , text
+    , unordered-containers
+    , yaml
   other-modules:
-      Paths_httptest
+      Paths_httpsignin
   default-language: Haskell2010
